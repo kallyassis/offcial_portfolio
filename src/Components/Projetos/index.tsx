@@ -71,7 +71,7 @@ const Projetos = () => {
                   nisi omnis aspernatur inventore placeat nostrum et!
                 </p>
                 <Link
-                  href="https://event-ficticio.vercel.app/"
+                  href="https://e-food-seven-tau.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -92,7 +92,7 @@ const Projetos = () => {
                   nisi omnis aspernatur inventore placeat nostrum et!
                 </p>
                 <Link
-                  href="https://event-ficticio.vercel.app/"
+                  href="https://clone-disneyplus-mu-pied.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -113,7 +113,7 @@ const Projetos = () => {
                   nisi omnis aspernatur inventore placeat nostrum et!
                 </p>
                 <Link
-                  href="https://event-ficticio.vercel.app/"
+                  href="https://tenis-nike-indol.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
