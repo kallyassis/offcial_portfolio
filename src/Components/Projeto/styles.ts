@@ -5,12 +5,12 @@ import { keyframes } from "styled-components";
 const fadeUp = keyframes`
   from {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translatex(-40px);
   }
 
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translatex(0);
   }
 `;
 
@@ -43,22 +43,24 @@ export const List = styled.li<{invert? : boolean}>`
   opacity: 0;
 
   flex-direction: ${({invert}) => invert ? "row-reverse" : "row"};
-  animation: ${fadeUp} 0.8s ease forwards;  
-
-  .is-visible & {
-    nimation: fadeUp 2s ease forwards;
-  }
-
+  animation: ${fadeUp} 0.8s ease forwards; 
 
   &:nth-child(1) {
     animation-delay: 0.2s;
+
   }
   &:nth-child(2) {
     animation-delay: 0.8s;
+    transform: translatey(40px);
   }
   &:nth-child(3) {
     animation-delay: 1s;
   }
+  &:nth-child(4) {
+    animation-delay: 1.4s;
+    transform: translatey(40px);
+  }  
+
   &:nth-child(4) {
     animation-delay: 1.4s;
   }

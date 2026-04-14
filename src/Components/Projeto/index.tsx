@@ -3,7 +3,6 @@ import Nike from "../../assets/nike.png";
 import Efood from "../../assets/restaurant.png";
 import Disney from "../../assets/disney.png";
 import { BoxList, BoxText, Content, List } from "./styles";
-import { useEffect, useRef, useState } from "react";
 
 const groutProject = [
   {
@@ -38,38 +37,14 @@ const groutProject = [
 
 
 const Projeto = () => {
-  const sectionRef = useRef<HTMLElement | null>(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-      const currentSection = sectionRef.current;
-  
-      if (!currentSection) return;
-  
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true);
-            observer.disconnect();
-          }
-        },
-        {
-          threshold: 0.25,
-        }
-      );
-  
-      observer.observe(currentSection);
-  
-      return () => observer.disconnect();
-    }, []);
   return (
     <>
-      <Content id="project"  ref={sectionRef}>
+      <Content id="project">
             <div className="container">
               <h2>Projetos</h2>
               <BoxList>
                 {groutProject.map((project) => (
-                  <List key={project.title} className={isVisible ? "is-visible" : ""}>
+                  <List key={project.title}>
                     <div>
                       <img src={project.imagem} alt="" />
                     </div>
