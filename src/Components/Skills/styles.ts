@@ -2,46 +2,42 @@ import { cores } from "./../../stylesGlobal";
 import styled from "styled-components";
 
 export const Content = styled.section`
-  padding: 50px;
-  min-height: 90vh;
+  padding: 24px 0 96px;
 
-  @media (max-width: 768px) {
-    padding: 0;
-    min-height: 100vh;
+  @media (min-width: 320px)  and (max-width: 767px)  { 
+    padding: 24px 0 72px;
   }
-
-  @media (min-width: 769px)  and (max-width: 1024px)  { 
-    min-height: 80vh;
-  }
-
 
   .container {
+    padding: 24px 0;
+
     h2 {
       text-align: center;
-      margin-bottom: 50px;
+      margin-bottom: 56px;
     }
 
-    div {
-      margin-bottom: 100px;
-      h3 {
-        font-size: 22px;
-        margin-bottom: 40px;
+    > div {
+      margin-bottom: 56px;
+
+      &:last-child {
+        margin-bottom: 0;
       }
 
-      @media (max-width: 768px) {
-        div {
-          margin-bottom: 20px;
+      h3 {
+        font-size: 22px;
+        margin-bottom: 24px;
+      }
 
-          h3 {
-            margin-bottom: 24px;
-          }
+      @media (min-width: 320px)  and (max-width: 767px)  { 
+        h3 {
+          margin-bottom: 20px;  
         }
       }
     }
 
-    @media (max-width: 768px) {
+    @media (min-width: 320px) and (max-width: 767px) {
       h2 {
-        margin-bottom: 24px;
+        margin-bottom: 40px;
       }
     }
   }
@@ -49,19 +45,18 @@ export const Content = styled.section`
 
 export const Box = styled.ul`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   list-style: none;
-  gap: 20px;
+  gap: 24px;
 
-  @media (max-width: 768px) {
+  @media (min-width: 320px) and (max-width: 767px) {
     grid-template-columns: repeat(1, 1fr);
-    gap: 40px;
+    gap: 16px;
   }
 
-  @media (min-width: 769px)  and (max-width: 1024px)  { 
+  @media (min-width: 768px) and (max-width: 1024px) {
     grid-template-columns: repeat(2, 1fr);
   }
-
 
   .icon {
     opacity: 0;
@@ -70,7 +65,7 @@ export const Box = styled.ul`
     transition: ease 2s;
 
     &:nth-child(1) {
-      animation-delay: 0.4s;
+      animation-delay: 0.2s;
     }
 
     &:nth-child(2) {
@@ -99,24 +94,19 @@ export const Box = styled.ul`
 
 export const BoxItem = styled.li`
   background: ${cores.CorCardSkill};
-  border: 5px solid ${cores.CorCardSkill};
-  box-shadow: 0px 0px 20px rgba(255, 45, 149, 0.35);
+  border: 1px solid rgba(125, 211, 252, 0.18);
+  box-shadow: 0px 18px 40px rgba(7, 10, 30, 0.45);
   border-radius: 30px;
-
-  width: 370px;
-  padding: 20px;
+  min-height: 100%;
+  width: 100%;
+  padding: 24px;
 
   p {
     color: ${cores.CorTexto};
-    line-height: 24px;
+    line-height: 28px;
   }
 
-  @media (max-width: 768px) {
+  @media (min-width: 320px)  and (max-width: 767px)  { 
     width: 100%;
   }
-
-  @media (min-width: 769px)  and (max-width: 1024px)  { 
-    width: 100%;
-  }
-
 `;

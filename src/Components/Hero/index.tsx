@@ -29,7 +29,7 @@ const Hero = () => {
                 text={
                   <>
                     Olá, eu sou{" "} {" "}
-                    <span className="style-text">Kalinka Assis!</span>
+                    <span className="style-text">Kalinka {" "} Assis!</span>
                   </>
                 }
 

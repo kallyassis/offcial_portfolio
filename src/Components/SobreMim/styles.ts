@@ -2,39 +2,43 @@ import styled from "styled-components";
 import { cores } from "../../stylesGlobal";
 
 export const Content = styled.section`
-  padding: 50px 0;
   text-align: center;
-  min-height: 100vh;
-  display: block;
-  align-items: center;
-  justify-content: center;
-  margin-top: 150px;
+  padding: 40px 0 96px;
 
   .aura {
     width: 100%;
-    height: 400px;
+    height: 220px;
+    opacity: 0.85;
   }
 
-  @media (max-width: 768px) {
-    padding:  8px;
+  @media (min-width: 320px) and (max-width: 1024px) {
+    padding: 24px 0 72px;
 
-  }
-
-  @media (min-width: 769px)  and (max-width: 1024px)  {
-    min-height: 70vh;
-    
+    .aura {
+      width: 100%;
+      height: 150px;
+    }
   }
 
   .container {
-    margin-bottom: 50px;
-    P {
-      margin-top: 20px;
+    p {
+      padding-top: 20px;
       color: ${cores.CorTexto};
-      line-height: 24px;
+      line-height: 1.9;
       font-size: 18px;
+      max-width: 820px;
+      margin: 0 auto;
+    }
 
-      @media (max-width: 768px) {
-        margin-top: 10px;
+    @media (min-width: 320px) and (max-width: 1024px) {
+      padding: 24px 0;
+
+      h2 {
+        margin-top: 20px;
+      }
+
+      p {
+        padding-top: 10px;
         line-height: 22px;
         font-size: 16px;
       }

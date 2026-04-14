@@ -1,11 +1,13 @@
 import { createGlobalStyle } from "styled-components";
 
 export const cores = {
-  CorDeFundo: "#000",
+  CorDeFundo: "#050816",
+  CorDeFundoSec: "#0c1224",
   CorPrincipal: "#ff2d95",
-  CorCardSkill: "linear-gradient(135deg, #692eff6c, #ff2d95)",
+  CorSecundaria: "#7dd3fc",
+  CorCardSkill: "linear-gradient(135deg, rgba(125, 211, 252, 0.16), rgba(255, 45, 149, 0.2))",
   CorTexto: "#FFFDD0",
-  CorDoHeader: "#0f0e0e",
+  CorDoHeader: "rgba(5, 8, 22, 0.88)",
 };
 
 export const GlobalStyles = createGlobalStyle`
@@ -20,26 +22,37 @@ export const GlobalStyles = createGlobalStyle`
     scroll-behavior: smooth;
   }
 
+  html, body, #root {
+    min-height: 100%;
+  }
+
   body {
-    background-color: ${cores.CorDeFundo};
+    background:
+      radial-gradient(circle at top, rgba(125, 211, 252, 0.08), transparent 30%),
+      linear-gradient(180deg, ${cores.CorDeFundo} 0%, ${cores.CorDeFundoSec} 100%);
     color: ${cores.CorTexto} ;
+  }
+
+  body::selection {
+    background: ${cores.CorPrincipal};
+    color: ${cores.CorTexto};
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  section {
+    scroll-margin-top: 120px;
   }
   
   .container {
-    max-width: 1200px;
+    max-width: 1180px;
     width: 100%;
     margin: 0 auto;
     padding: 0 24px;
     position: relative;
-
-    @media (max-width: 768px) {
-      overflow-x: hidden;
-    }
-
-    @media (min-width: 769px) and (max-width: 1024px) {
-      overflow-x: hidden;
-    }
-
   }
 
   .style-text {

@@ -1,6 +1,78 @@
 import { useEffect, useRef, useState } from "react";
 import { Box, BoxItem, Content } from "./styles";
 
+const skillGroups = [
+  {
+    title: "Hard Skills",
+    items: [
+      {
+        title: "Frontend",
+        description: [
+          "HTML",
+          "CSS3",
+          "JavaScript (ES6+)",
+          "TypeScript",
+          "ReactJS",
+          "Styled Components",
+          "SASS",
+          "Responsividade",
+        ],
+      },
+      {
+        title: "Backend & Banco de Dados",
+        description: [
+          "Node.js",
+          "Express.js",
+          "MongoDB",
+          "Sequelize",
+          "Python",
+          "APIs REST",
+        ],
+      },
+      {
+        title: "Ferramentas & Workflow",
+        description: [
+          "Git & GitHub",
+          "VS Code",
+          "Vite",
+          "Figma",
+          "UI/UX básica",
+          "Yarn & npm",
+        ],
+      },
+    ],
+  },
+  {
+    title: "Soft Skills",
+    items: [
+      {
+        title: "Comunicação",
+        description: [
+          "Clareza na troca com time e cliente",
+          "Escuta ativa",
+          "Boa documentação",
+        ],
+      },
+      {
+        title: "Colaboração",
+        description: [
+          "Trabalho em equipe",
+          "Compartilhamento de conhecimento",
+          "Abertura para feedback",
+        ],
+      },
+      {
+        title: "Mentalidade de Crescimento",
+        description: [
+          "Aprendizado contínuo",
+          "Organização",
+          "Resolução de problemas",
+        ],
+      },
+    ],
+  },
+];
+
 const Skills = () => {
   const sectionRef = useRef<HTMLElement | null>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -31,89 +103,20 @@ const Skills = () => {
     <>
       <Content id="skills" ref={sectionRef} className={isVisible ? "is-visible" : ""}>
         <div className="container">
-          <h2 className="style-text">Habilidade</h2>
-          <div>
-            <h3 className="style-text">Hard Skills</h3>
-            <Box>
-              <BoxItem className="icon">
-                <h4 className="cor-texto-sec">Frontend</h4>
-                <p>
-                  HTML <br />
-                  CSS3 <br />
-                  JavaScript(ES6+) <br />
-                  TypeScript <br />
-                  ReactJS <br />
-                  Styled Components <br />
-                  SASS <br />
-                  Rsponsividade(intermediario)
-                </p>
-              </BoxItem>
-              <BoxItem className="icon">
-                <h4 className="cor-texto-sec">Backend & Banco de Dados</h4>
-                <p>
-                  NodeJS <br />
-                  ExpessJS(iniciante) <br />
-                  MonogoDB/Sequelize(iniciante) <br />
-                  Python(iniciante) <br />
-                </p>
-              </BoxItem>
-              <BoxItem className="icon">
-                <h4 className="cor-texto-sec">Ferramentas & Workflow</h4>
-                <p>
-                  Git/Github <br />
-                  Vs Code
-                  <br />
-                  Webpack(vite)
-                  <br />
-                  Figma/Design Tools(Protipação e UI/UX básica)
-                  <br />
-                  Yarn/npm
-                  <br />
-                </p>
-              </BoxItem>
-            </Box>
-          </div>
-          <div>
-            <h3 className="style-text">Soft Skills</h3>
-            <Box>
-              <BoxItem className="icon">
-                <h4 className="cor-texto-sec">Frontend</h4>
-                <p>
-                  HTML <br />
-                  CSS3 <br />
-                  JavaScript(ES6+) <br />
-                  TypeScript <br />
-                  ReactJS <br />
-                  Styled Components <br />
-                  SASS <br />
-                  Rsponsividade(intermediario)
-                </p>
-              </BoxItem>
-              <BoxItem className="icon">
-                <h4 className="cor-texto-sec">Backend & Banco de Dados</h4>
-                <p>
-                  NodeJS <br />
-                  ExpessJS(iniciante) <br />
-                  MonogoDB/Sequelize(iniciante) <br />
-                  Python(iniciante) <br />
-                </p>
-              </BoxItem>
-              <BoxItem className="icon">
-                <h4 className="cor-texto-sec">Ferramentas & Workflow</h4>
-                <p>
-                  Git/Github <br />
-                  Vs Code
-                  <br />
-                  Webpack(vite)
-                  <br />
-                  Figma/Design Tools(Protipação e UI/UX básica)
-                  <br />
-                  Yarn/npm
-                  <br />
-                </p>
-              </BoxItem>
-            </Box>
-          </div>
+          <h2 className="style-text">Habilidades</h2>
+          {skillGroups.map((group) => (
+            <div key={group.title}>
+              <h3 className="style-text">{group.title}</h3>
+              <Box>
+                {group.items.map((item) => (
+                  <BoxItem key={item.title} className="icon">
+                    <h4 className="cor-texto-sec">{item.title}</h4>
+                    <p>{item.description.join(" • ")}</p>
+                  </BoxItem>
+                ))}
+              </Box>
+            </div>
+          ))}
         </div>
       </Content>
     </>
