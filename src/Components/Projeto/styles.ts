@@ -66,14 +66,35 @@ export const List = styled.li<{invert? : boolean}>`
   }
 
   img {
+    width: 100%;
     max-width: 600px;
-
     aspect-ratio: 100/49;
     object-fit: cover;
-
-  transition:  transform  0.3s ease;
+    transition: transform 0.3s ease;
   }
 
+  @media (max-width: 1024px) {
+    display: block;
+    gap: 32px;
+
+    img {
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-size: 2rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 24px;
+
+    img {
+      max-width: 100%;
+    }
+  }
 `;
 
 export const BoxText = styled.div`
@@ -103,5 +124,16 @@ export const BoxText = styled.div`
       transform: scale(0.95);
     }
     
+  }
+
+  @media (max-width: 1024px) {
+
+    h3 {
+      font-size: 1.5rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+    }
   }
 `;
