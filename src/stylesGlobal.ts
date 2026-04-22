@@ -31,6 +31,7 @@ export const GlobalStyles = createGlobalStyle`
       radial-gradient(circle at top, rgba(125, 211, 252, 0.08), transparent 30%),
       linear-gradient(180deg, ${cores.CorDeFundo} 0%, ${cores.CorDeFundoSec} 100%);
     color: ${cores.CorTexto} ;
+    overflow-x: hidden;
   }
 
   body::selection {
